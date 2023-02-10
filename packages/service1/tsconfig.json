@@ -2,6 +2,8 @@
   "extends": "@tsconfig/node16/tsconfig.json",
   "compilerOptions": {
     "module": "esnext",
+    "target": "esnext",
+    "outDir": "dist",
     "baseUrl": ".",
     "paths": {
       "@runtainer/core/*": ["../core/src/*"]
