@@ -1,0 +1,16 @@
+{
+  "name": "@runtainer/core",
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "test": "sst bind vitest",
+    "typecheck": "tsc -noEmit"
+  },
+  "devDependencies": {
+    "vitest": "^0.28.4",
+    "@types/node": "^18.13.0"
+  },
+  "dependencies": {
+    "sst": "^2.0.6"
+  }
+}
