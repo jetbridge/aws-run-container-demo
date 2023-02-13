@@ -8,30 +8,28 @@ COPY pnpm-workspace.yaml package.json pnpm-lock.yaml ./
 COPY packages ./packages
 
 # build
-RUN pnpm install
-RUN pnpm -r build
-RUN ls -al /usr/src/app/
+RUN pnpm install  # install all dependencies for building
+RUN pnpm -r build  # build all packages
 
-# output prod version of service1
-RUN pnpm --filter service1 --prod deploy build-service1
+# install prod dependencies
+RUN pnpm --filter service1 --prod deploy build/service1
 
-## RUNNER
+## SERVICE1 RUNNER
 FROM node:18-alpine AS service1
 
-# install pnpm
-# RUN npm install -g pnpm
-
 # create user
-RUN adduser -Dh /usr/src/app app
 RUN mkdir -p /usr/src/app
+RUN adduser -Dh /usr/src/app app
 RUN chown -R app:app /usr/src/app
 USER app
 
 # set working directory
 WORKDIR /usr/src/app
 
-# copy dist and node_modules
-COPY --from=builder --chown=app:app /usr/src/app/build-service1 ./
+# copy app files
+COPY --from=builder --chown=app:app /usr/src/app/build/service1 ./
+# copy dist
+COPY --from=builder --chown=app:app /usr/src/app/packages/service1/dist ./dist/
 
 EXPOSE 3000
 
