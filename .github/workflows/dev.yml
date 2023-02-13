@@ -5,6 +5,6 @@ on:
 
 jobs:
   build-deploy-dev:
-    uses: ./.github/build-deploy.yml
+    uses: ./.github/workflows/build-deploy.yml
     with:
       stage: dev
