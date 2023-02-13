@@ -60,5 +60,5 @@ jobs:
         run: pnpm -r build
 
       # Deploy
-      - name: Deploy ${{ inputs.stage }}
+      - name: SST build and deploy ${{ inputs.stage }}
         run: pnpm exec sst deploy --stage ${{ inputs.stage }}
