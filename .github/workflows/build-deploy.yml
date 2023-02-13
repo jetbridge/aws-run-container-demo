@@ -53,7 +53,7 @@ jobs:
       - name: Install dependencies
         run: pnpm install
       - name: SST build
-        run: pnpm build
+        run: pnpm build --stage dev
       - name: Type checks
         run: pnpm typecheck:all
 
