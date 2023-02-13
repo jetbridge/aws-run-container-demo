@@ -55,7 +55,7 @@ jobs:
       - name: SST build
         run: pnpm build
       - name: Type checks
-        run: pnpm typecheck
+        run: pnpm typecheck:all
 
       # Deploy
       - name: Deploy ${{ inputs.stage }}

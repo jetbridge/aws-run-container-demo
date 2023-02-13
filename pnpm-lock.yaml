@@ -5,6 +5,7 @@ importers:
   .:
     specifiers:
       '@tsconfig/node16': ^1.0.3
+      '@types/node': ^18.13.0
       aws-cdk-lib: 2.62.2
       constructs: 10.1.156
       sst: ^2.0.6
@@ -12,6 +13,7 @@ importers:
       typescript: ^4.9.5
     devDependencies:
       '@tsconfig/node16': 1.0.3
+      '@types/node': 18.13.0
       aws-cdk-lib: 2.62.2_constructs@10.1.156
       constructs: 10.1.156
       sst: 2.0.6
