@@ -56,6 +56,8 @@ jobs:
         run: pnpm build --stage dev
       - name: Type checks
         run: pnpm typecheck:all
+      - name: Compile typescript
+        run: pnpm -r build
 
       # Deploy
       - name: Deploy ${{ inputs.stage }}
