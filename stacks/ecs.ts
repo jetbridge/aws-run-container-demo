@@ -12,7 +12,8 @@ export function Ecs({ stack }: StackContext) {
     memoryLimitMiB: 1024,
     cpu: 512,
     taskImageOptions: {
-      image: ecs.ContainerImage.fromAsset("./packages/service1"),
+      image: ecs.ContainerImage.fromAsset("."),
+      containerName: "service1",
       containerPort: 3000,
     },
   });
