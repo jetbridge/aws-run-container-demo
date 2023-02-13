@@ -19,13 +19,7 @@ jobs:
           cache: pnpm
       - name: Install dependencies
         run: pnpm install
-      - name: SST build
-        run: pnpm build --stage dev
       - name: Type checks
         run: pnpm typecheck:all
       - name: Compile typescript
         run: pnpm -r build
-
-      # Deploy
-      - name: SST build and deploy ${{ inputs.stage }}
-        run: pnpm exec sst deploy --stage ${{ inputs.stage }}
