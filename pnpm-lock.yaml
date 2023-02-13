@@ -8,7 +8,7 @@ importers:
       '@types/node': ^18.13.0
       aws-cdk-lib: 2.62.2
       constructs: 10.1.156
-      sst: ^2.0.6
+      sst: 2.0.22
       tsx: ^3.12.3
       typescript: ^4.9.5
     devDependencies:
@@ -16,17 +16,17 @@ importers:
       '@types/node': 18.13.0
       aws-cdk-lib: 2.62.2_constructs@10.1.156
       constructs: 10.1.156
-      sst: 2.0.6
+      sst: 2.0.22
       tsx: 3.12.3
       typescript: 4.9.5
 
   packages/core:
     specifiers:
       '@types/node': ^18.13.0
-      sst: ^2.0.6
+      sst: 2.0.22
       vitest: ^0.28.4
     dependencies:
-      sst: 2.0.6
+      sst: 2.0.22
     devDependencies:
       '@types/node': 18.13.0
       vitest: 0.28.4
@@ -35,9 +35,9 @@ importers:
     specifiers:
       '@types/aws-lambda': ^8.10.110
       '@types/node': ^18.13.0
-      sst: ^2.0.6
+      sst: 2.0.22
     dependencies:
-      sst: 2.0.6
+      sst: 2.0.22
     devDependencies:
       '@types/aws-lambda': 8.10.110
       '@types/node': 18.13.0
@@ -47,10 +47,10 @@ importers:
       '@types/express': ^4.17.17
       '@types/node': ^18.13.0
       express: ^4.18.2
-      sst: ^2.0.6
+      sst: 2.0.22
     dependencies:
       express: 4.18.2
-      sst: 2.0.6
+      sst: 2.0.22
     devDependencies:
       '@types/express': 4.17.17
       '@types/node': 18.13.0
@@ -226,6 +226,51 @@ packages:
     dependencies:
       tslib: 2.5.0
 
+  /@aws-sdk/client-api-gateway/3.208.0:
+    resolution: {integrity: sha512-BGZGEn1qgbjjWzBY6g4uSI+HrXUcQP2wdGV+n12S818tbmUE3171WFluKkh6q+vbcBIT9GuaOgTI4mtLgTIZ3g==}
+    engines: {node: '>=14.0.0'}
+    dependencies:
+      '@aws-crypto/sha256-browser': 2.0.0
+      '@aws-crypto/sha256-js': 2.0.0
+      '@aws-sdk/client-sts': 3.208.0
+      '@aws-sdk/config-resolver': 3.208.0
+      '@aws-sdk/credential-provider-node': 3.208.0
+      '@aws-sdk/fetch-http-handler': 3.208.0
+      '@aws-sdk/hash-node': 3.208.0
+      '@aws-sdk/invalid-dependency': 3.208.0
+      '@aws-sdk/middleware-content-length': 3.208.0
+      '@aws-sdk/middleware-endpoint': 3.208.0
+      '@aws-sdk/middleware-host-header': 3.208.0
+      '@aws-sdk/middleware-logger': 3.208.0
+      '@aws-sdk/middleware-recursion-detection': 3.208.0
+      '@aws-sdk/middleware-retry': 3.208.0
+      '@aws-sdk/middleware-sdk-api-gateway': 3.208.0
+      '@aws-sdk/middleware-serde': 3.208.0
+      '@aws-sdk/middleware-signing': 3.208.0
+      '@aws-sdk/middleware-stack': 3.208.0
+      '@aws-sdk/middleware-user-agent': 3.208.0
+      '@aws-sdk/node-config-provider': 3.208.0
+      '@aws-sdk/node-http-handler': 3.208.0
+      '@aws-sdk/protocol-http': 3.208.0
+      '@aws-sdk/smithy-client': 3.208.0
+      '@aws-sdk/types': 3.208.0
+      '@aws-sdk/url-parser': 3.208.0
+      '@aws-sdk/util-base64': 3.208.0
+      '@aws-sdk/util-base64-browser': 3.208.0
+      '@aws-sdk/util-base64-node': 3.208.0
+      '@aws-sdk/util-body-length-browser': 3.188.0
+      '@aws-sdk/util-body-length-node': 3.208.0
+      '@aws-sdk/util-defaults-mode-browser': 3.208.0
+      '@aws-sdk/util-defaults-mode-node': 3.208.0
+      '@aws-sdk/util-endpoints': 3.208.0
+      '@aws-sdk/util-user-agent-browser': 3.208.0
+      '@aws-sdk/util-user-agent-node': 3.208.0
+      '@aws-sdk/util-utf8-browser': 3.188.0
+      '@aws-sdk/util-utf8-node': 3.208.0
+      tslib: 2.5.0
+    transitivePeerDependencies:
+      - aws-crt
+
   /@aws-sdk/client-cloudformation/3.208.0:
     resolution: {integrity: sha512-0Z4fz4CDoaGideh0JlSKS1GVHVmrWr2Ogxcs3bbtdVeXmIEOsTVLkSCtDIK+Y9IeEv6YkEQPSeBYdhv+v1okZA==}
     engines: {node: '>=14.0.0'}
@@ -273,6 +318,53 @@ packages:
     transitivePeerDependencies:
       - aws-crt
 
+  /@aws-sdk/client-cloudfront/3.208.0:
+    resolution: {integrity: sha512-PCCDpQaT44B1YlD0Lj2DYCF4Lxzf5TKcj5uAe4vJhLrRsCuPGRU1ZrpkDEdKvDM4gIXbMsDbFknhH06ph2SyBA==}
+    engines: {node: '>=14.0.0'}
+    dependencies:
+      '@aws-crypto/sha256-browser': 2.0.0
+      '@aws-crypto/sha256-js': 2.0.0
+      '@aws-sdk/client-sts': 3.208.0
+      '@aws-sdk/config-resolver': 3.208.0
+      '@aws-sdk/credential-provider-node': 3.208.0
+      '@aws-sdk/fetch-http-handler': 3.208.0
+      '@aws-sdk/hash-node': 3.208.0
+      '@aws-sdk/invalid-dependency': 3.208.0
+      '@aws-sdk/middleware-content-length': 3.208.0
+      '@aws-sdk/middleware-endpoint': 3.208.0
+      '@aws-sdk/middleware-host-header': 3.208.0
+      '@aws-sdk/middleware-logger': 3.208.0
+      '@aws-sdk/middleware-recursion-detection': 3.208.0
+      '@aws-sdk/middleware-retry': 3.208.0
+      '@aws-sdk/middleware-serde': 3.208.0
+      '@aws-sdk/middleware-signing': 3.208.0
+      '@aws-sdk/middleware-stack': 3.208.0
+      '@aws-sdk/middleware-user-agent': 3.208.0
+      '@aws-sdk/node-config-provider': 3.208.0
+      '@aws-sdk/node-http-handler': 3.208.0
+      '@aws-sdk/protocol-http': 3.208.0
+      '@aws-sdk/smithy-client': 3.208.0
+      '@aws-sdk/types': 3.208.0
+      '@aws-sdk/url-parser': 3.208.0
+      '@aws-sdk/util-base64': 3.208.0
+      '@aws-sdk/util-base64-browser': 3.208.0
+      '@aws-sdk/util-base64-node': 3.208.0
+      '@aws-sdk/util-body-length-browser': 3.188.0
+      '@aws-sdk/util-body-length-node': 3.208.0
+      '@aws-sdk/util-defaults-mode-browser': 3.208.0
+      '@aws-sdk/util-defaults-mode-node': 3.208.0
+      '@aws-sdk/util-endpoints': 3.208.0
+      '@aws-sdk/util-user-agent-browser': 3.208.0
+      '@aws-sdk/util-user-agent-node': 3.208.0
+      '@aws-sdk/util-utf8-browser': 3.188.0
+      '@aws-sdk/util-utf8-node': 3.208.0
+      '@aws-sdk/util-waiter': 3.208.0
+      '@aws-sdk/xml-builder': 3.201.0
+      fast-xml-parser: 4.0.11
+      tslib: 2.5.0
+    transitivePeerDependencies:
+      - aws-crt
+
   /@aws-sdk/client-cognito-identity/3.208.0:
     resolution: {integrity: sha512-mYlkNxRYJyXkHwY+6kv2Wth2xcP+dfgDrqfnHqMAKL1TGPVtkCKFYw0xAk4aBrlRfx1unyQFDen2NfBVtITCSw==}
     engines: {node: '>=14.0.0'}
@@ -313,6 +405,52 @@ packages:
       '@aws-sdk/util-user-agent-node': 3.208.0
       '@aws-sdk/util-utf8-browser': 3.188.0
       '@aws-sdk/util-utf8-node': 3.208.0
+      tslib: 2.5.0
+    transitivePeerDependencies:
+      - aws-crt
+
+  /@aws-sdk/client-iam/3.208.0:
+    resolution: {integrity: sha512-hCac/fo4pREeYSrNL9TrlJraLxiVT+M2eG8dVQXqaFcOKER+HLFV+DSFHnmDf1i0vS9jWvVn/Jjo19InorhNpA==}
+    engines: {node: '>=14.0.0'}
+    dependencies:
+      '@aws-crypto/sha256-browser': 2.0.0
+      '@aws-crypto/sha256-js': 2.0.0
+      '@aws-sdk/client-sts': 3.208.0
+      '@aws-sdk/config-resolver': 3.208.0
+      '@aws-sdk/credential-provider-node': 3.208.0
+      '@aws-sdk/fetch-http-handler': 3.208.0
+      '@aws-sdk/hash-node': 3.208.0
+      '@aws-sdk/invalid-dependency': 3.208.0
+      '@aws-sdk/middleware-content-length': 3.208.0
+      '@aws-sdk/middleware-endpoint': 3.208.0
+      '@aws-sdk/middleware-host-header': 3.208.0
+      '@aws-sdk/middleware-logger': 3.208.0
+      '@aws-sdk/middleware-recursion-detection': 3.208.0
+      '@aws-sdk/middleware-retry': 3.208.0
+      '@aws-sdk/middleware-serde': 3.208.0
+      '@aws-sdk/middleware-signing': 3.208.0
+      '@aws-sdk/middleware-stack': 3.208.0
+      '@aws-sdk/middleware-user-agent': 3.208.0
+      '@aws-sdk/node-config-provider': 3.208.0
+      '@aws-sdk/node-http-handler': 3.208.0
+      '@aws-sdk/protocol-http': 3.208.0
+      '@aws-sdk/smithy-client': 3.208.0
+      '@aws-sdk/types': 3.208.0
+      '@aws-sdk/url-parser': 3.208.0
+      '@aws-sdk/util-base64': 3.208.0
+      '@aws-sdk/util-base64-browser': 3.208.0
+      '@aws-sdk/util-base64-node': 3.208.0
+      '@aws-sdk/util-body-length-browser': 3.188.0
+      '@aws-sdk/util-body-length-node': 3.208.0
+      '@aws-sdk/util-defaults-mode-browser': 3.208.0
+      '@aws-sdk/util-defaults-mode-node': 3.208.0
+      '@aws-sdk/util-endpoints': 3.208.0
+      '@aws-sdk/util-user-agent-browser': 3.208.0
+      '@aws-sdk/util-user-agent-node': 3.208.0
+      '@aws-sdk/util-utf8-browser': 3.188.0
+      '@aws-sdk/util-utf8-node': 3.208.0
+      '@aws-sdk/util-waiter': 3.208.0
+      fast-xml-parser: 4.0.11
       tslib: 2.5.0
     transitivePeerDependencies:
       - aws-crt
@@ -994,6 +1132,14 @@ packages:
       '@aws-sdk/util-middleware': 3.208.0
       tslib: 2.5.0
       uuid: 8.3.2
+
+  /@aws-sdk/middleware-sdk-api-gateway/3.208.0:
+    resolution: {integrity: sha512-esI4x7qooCECo5hP6d4cSqGxJ8WtFsR3aCXZvO841MXCaYQDEh6tApJMwK3kwh4lcp0Iu3M5aYF/DP6vQFYS+Q==}
+    engines: {node: '>=14.0.0'}
+    dependencies:
+      '@aws-sdk/protocol-http': 3.208.0
+      '@aws-sdk/types': 3.208.0
+      tslib: 2.5.0
 
   /@aws-sdk/middleware-sdk-s3/3.208.0:
     resolution: {integrity: sha512-YX4BGgUuo/GO2J/8KRS4arSOaBJe9nxouV+MH+ESfPYIetY1p9fEPDYU9p1j69+tKF13ER728msaa16Zb1HEYA==}
@@ -4723,8 +4869,8 @@ packages:
   /splitargs/0.0.7:
     resolution: {integrity: sha512-UUFYD2oWbNwULH6WoVtLUOw8ch586B+HUqcsAjjjeoBQAM1bD4wZRXu01koaxyd8UeYpybWqW4h+lO1Okv40Tg==}
 
-  /sst/2.0.6:
-    resolution: {integrity: sha512-K/OApFcCk1uXtP9G5zdRs0krSVmnS2+uFDtt2lFrL3yfozb8d0bxn2ONZCINII9qTr3BDQJ7ggUcfUnHg/Elvg==}
+  /sst/2.0.22:
+    resolution: {integrity: sha512-xNL8U0yvX6Ct4uAmbS1hbxk94cyGOJ8rUtSrbuDpz/ILFFjCXQb85MZfj96ynw4pPYbWfx1AA1P2cmEKG6IATA==}
     hasBin: true
     peerDependencies:
       '@sls-next/lambda-at-edge': ^3.7.0
@@ -4739,7 +4885,10 @@ packages:
       '@aws-cdk/cloudformation-diff': 2.62.2
       '@aws-cdk/cx-api': 2.62.2
       '@aws-cdk/region-info': 2.62.2
+      '@aws-sdk/client-api-gateway': 3.208.0
       '@aws-sdk/client-cloudformation': 3.208.0
+      '@aws-sdk/client-cloudfront': 3.208.0
+      '@aws-sdk/client-iam': 3.208.0
       '@aws-sdk/client-iot': 3.208.0
       '@aws-sdk/client-iot-data-plane': 3.208.0
       '@aws-sdk/client-lambda': 3.208.0

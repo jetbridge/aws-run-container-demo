@@ -11,6 +11,6 @@
     "@types/node": "^18.13.0"
   },
   "dependencies": {
-    "sst": "^2.0.6"
+    "sst": "2.0.22"
   }
 }
