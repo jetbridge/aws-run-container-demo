@@ -1,7 +1,7 @@
 on:
   push:
-    branches:
-      - "!prod"
+    branches-ignore:
+      - prod
 
 jobs:
   build-deploy-dev:

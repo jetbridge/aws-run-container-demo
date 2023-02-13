@@ -11,9 +11,11 @@
     "deploy:prod": "sst deploy --stage prod",
     "remove": "sst remove",
     "console": "sst console",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "typecheck:all": "pnpm typecheck && pnpm -r typecheck"
   },
   "devDependencies": {
+    "@types/node": "^18.13.0",
     "@tsconfig/node16": "^1.0.3",
     "aws-cdk-lib": "2.62.2",
     "constructs": "10.1.156",

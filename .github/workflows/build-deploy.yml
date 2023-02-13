@@ -25,7 +25,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v3
 
       # get AWS credentials
       - name: Configure Dev AWS credentials
@@ -53,10 +53,12 @@ jobs:
       - name: Install dependencies
         run: pnpm install
       - name: SST build
-        run: pnpm build
+        run: pnpm build --stage dev
       - name: Type checks
-        run: pnpm typecheck
+        run: pnpm typecheck:all
+      - name: Compile typescript
+        run: pnpm -r build
 
       # Deploy
-      - name: Deploy ${{ inputs.stage }}
+      - name: SST build and deploy ${{ inputs.stage }}
         run: pnpm exec sst deploy --stage ${{ inputs.stage }}
