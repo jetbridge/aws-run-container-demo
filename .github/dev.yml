@@ -1,0 +1,10 @@
+on:
+  push:
+    branches:
+      - "!prod"
+
+jobs:
+  build-deploy-dev:
+    uses: ./.github/build-deploy.yml
+    with:
+      stage: dev

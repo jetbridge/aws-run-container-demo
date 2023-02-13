@@ -1,0 +1,62 @@
+on:
+  workflow_call:
+    inputs:
+      stage:
+        required: true
+        type: string
+
+env:
+  # REPLACE ME
+  # get ROLE output value from dev/prod CICD stacks after deploying
+
+  DEV_AWS_ROLE: "arn:aws:iam::926563727003:role/github"
+  DEV_AWS_REGION: "us-west-2"
+
+  PROD_AWS_ROLE: ""
+  PROD_AWS_REGION: "us-west-2"
+
+# AWS OIDC
+permissions:
+  id-token: write # This is required for requesting the JWT
+  contents: read # This is required for actions/checkout
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      # get AWS credentials
+      - name: Configure Dev AWS credentials
+        if: ${{ inputs.stage != 'prod' }}
+        uses: aws-actions/configure-aws-credentials@v1
+        with:
+          role-to-assume: ${{ env.DEV_AWS_ROLE}}
+          aws-region: ${{ env.DEV_AWS_REGION }}
+      - name: Configure Prod AWS credentials
+        if: ${{ inputs.stage == 'prod' }}
+        uses: aws-actions/configure-aws-credentials@v1
+        with:
+          role-to-assume: ${{ env.PROD_AWS_ROLE}}
+          aws-region: ${{ env.PROD_AWS_REGION }}
+
+      # Build
+      - uses: pnpm/action-setup@v2
+        with:
+          version: 7
+      - name: Install Node
+        uses: actions/setup-node@v3
+        with:
+          node-version: "16"
+          cache: pnpm
+      - name: Install dependencies
+        run: pnpm install
+      - name: SST build
+        run: pnpm build
+      - name: Type checks
+        run: pnpm typecheck
+
+      # Deploy
+      - name: Deploy ${{ inputs.stage }}
+        run: pnpm exec sst deploy --stage ${{ inputs.stage }}
