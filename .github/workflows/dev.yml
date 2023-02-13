@@ -4,7 +4,14 @@ on:
       - prod
 
 jobs:
-  build-deploy-dev:
-    uses: ./.github/workflows/build-deploy.yml
+  build-dev:
+    uses: ./.github/workflows/build.yml
+    if: github.ref != 'refs/heads/master' # deploy if master
+    with:
+      stage: dev
+
+  deploy-dev:
+    uses: ./.github/workflows/deploy.yml
+    if: github.ref == 'refs/heads/master' # deploy if master
     with:
       stage: dev

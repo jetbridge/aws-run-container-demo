@@ -21,7 +21,7 @@ permissions:
   contents: read # This is required for actions/checkout
 
 jobs:
-  build:
+  deploy:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout

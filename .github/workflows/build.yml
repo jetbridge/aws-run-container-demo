@@ -1,0 +1,31 @@
+on:
+  - workflow_call
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      # Build
+      - uses: pnpm/action-setup@v2
+        with:
+          version: 7
+      - name: Install Node
+        uses: actions/setup-node@v3
+        with:
+          node-version: "16"
+          cache: pnpm
+      - name: Install dependencies
+        run: pnpm install
+      - name: SST build
+        run: pnpm build --stage dev
+      - name: Type checks
+        run: pnpm typecheck:all
+      - name: Compile typescript
+        run: pnpm -r build
+
+      # Deploy
+      - name: SST build and deploy ${{ inputs.stage }}
+        run: pnpm exec sst deploy --stage ${{ inputs.stage }}
