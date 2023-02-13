@@ -1,5 +1,7 @@
 import { SSTConfig } from "sst";
 import { ApiGateway } from "./stacks/apiGateway";
+import { Ecs } from "./stacks/ecs";
+import { Vpc } from "./stacks/vpc";
 
 export default {
   config(_input) {
@@ -9,6 +11,6 @@ export default {
     };
   },
   stacks(app) {
-    app.stack(ApiGateway);
+    app.stack(ApiGateway).stack(Vpc).stack(Ecs);
   },
 } satisfies SSTConfig;
