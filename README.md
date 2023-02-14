@@ -22,6 +22,8 @@ Uses [Serverless Stack](https://sst.dev/) to provide [live local lambda developm
 Demonstrates how to use [GitHub actions with OIDC authentication](https://github.com/aws-actions/configure-aws-credentials#assuming-a-role) as
 recommended by AWS for a CI/CD pipeline.
 
+Shared typescript library in `packages/core`.
+
 ## Instructions
 
 ### Install prerequisites
@@ -39,5 +41,20 @@ Follow [these instructions](https://docs.sst.dev/advanced/iam-credentials).
 
 To configure CI/CD you will need to create a role for GitHub Actions to authenticate as.
 
+1. Edit `.env` and set your GitHub org
 1. Deploy to your dev environment: `pnpm deploy:dev`
 1. Copy the value of the `CICD ROLE:` stack output ARN to `.github/workflows/deploy.yml` under `DEV_AWS_ROLE` - this will let your GitHub action authenticate with OIDC to AWS.
+
+Push to `master` to deploy to the `dev` environment, push to the `prod` branch to deploy to production.
+
+#### Alternative
+
+[Seed](https://seed.run) is a great tool for deploying CDK and SST apps to AWS.
+
+## Files
+
+You will want to edit these files for your setup:
+
+- `sst.config.ts` - can configure default regions, AWS profiles, stacks to deploy, app name
+- `.env` - configure your GitHub org for GitHub action authentication
+- `stacks/` - infrastructure lives in here
