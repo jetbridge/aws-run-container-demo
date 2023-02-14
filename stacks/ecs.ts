@@ -12,7 +12,9 @@ export function Ecs({ stack }: StackContext) {
     memoryLimitMiB: 1024,
     cpu: 512,
     taskImageOptions: {
-      image: ecs.ContainerImage.fromAsset("."),
+      image: ecs.ContainerImage.fromAsset(".", {
+        exclude: ["node_modules", ".git", ".sst"],
+      }),
       containerName: "service1",
       containerPort: 3000,
     },
