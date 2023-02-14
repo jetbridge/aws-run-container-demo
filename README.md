@@ -2,7 +2,7 @@
 
 ## What is this?
 
-An example of deploying AWS-native services.
+An example of deploying AWS-native services with CDK and GitHub Actions.
 
 ## What does this example do?
 
@@ -17,16 +17,20 @@ An example of deploying AWS-native services.
 
 Uses CDK to describe our infrastructure as code.
 
-Uses [Serverless Stack](https://sst.dev/) to provide [live local lambda development](https://docs.sst.dev/live-lambda-development).
+Builds a docker image that is deployed to Fargate behind an ALB.
 
 Demonstrates how to use [GitHub actions with OIDC authentication](https://github.com/aws-actions/configure-aws-credentials#assuming-a-role) as
 recommended by AWS for a CI/CD pipeline.
+
+Uses [Serverless Stack](https://sst.dev/) to provide [live local lambda development](https://docs.sst.dev/live-lambda-development).
 
 Shared typescript library in `packages/core`.
 
 ## Instructions
 
 ### Install prerequisites
+
+Node 18 is recommended.
 
 ```shell
 npm i -g pnpm
