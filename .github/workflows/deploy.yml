@@ -9,7 +9,7 @@ env:
   # REPLACE ME
   # get ROLE output value from dev/prod CICD stacks after deploying
 
-  DEV_AWS_ROLE: "arn:aws:iam::000000000000:role/github"
+  DEV_AWS_ROLE: "arn:aws:iam::926563727003:role/github"
   DEV_AWS_REGION: "us-west-2"
 
   PROD_AWS_ROLE: ""
