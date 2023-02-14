@@ -1,0 +1,16 @@
+# deploy to prod when pushed to the `prod` branch
+on:
+  push:
+    branches:
+      - prod
+
+jobs:
+  build-prod:
+    uses: ./.github/workflows/build.yml
+    if: github.ref != 'refs/heads/prod' # deploy if master
+
+  deploy-prod:
+    uses: ./.github/workflows/deploy.yml
+    if: github.ref == 'refs/heads/prod' # deploy if master
+    with:
+      stage: prod

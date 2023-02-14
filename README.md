@@ -40,4 +40,4 @@ Follow [these instructions](https://docs.sst.dev/advanced/iam-credentials).
 To configure CI/CD you will need to create a role for GitHub Actions to authenticate as.
 
 1. Deploy to your dev environment: `pnpm deploy:dev`
-1.
+1. Copy the value of the `CICD ROLE:` stack output ARN to `.github/workflows/deploy.yml` under `DEV_AWS_ROLE` - this will let your GitHub action authenticate with OIDC to AWS.
